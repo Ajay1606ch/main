@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Gallery</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 10px;
+        }
+
+        .gallery-item {
+            width: 100%;
+            max-width: 300px;
+            margin: 2px;
+            overflow: hidden;
+            border: 1px solid #b92222;
+            border-radius: 1px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            
+    
+        }
+
+        @media (min-width: 600px) {
+            .gallery-item {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (min-width: 800px) {
+            .gallery-item {
+                width: calc(33.33% - 20px);
+            }
+        }
+        @media screen and (min-width : 425px) and (max-width : 780px){
+            h1{
+                color: red;
+                background-color: blue;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+<h1>Indian cricketers</h1>
+    <div class="gallery">
+        
+        <div class="gallery-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Virat_Kohli_during_the_India_vs_Aus_4th_Test_match_at_Narendra_Modi_Stadium_on_09_March_2023.jpg" alt="Image 1" width="200" height="200">
+        </div>
+        <div class="gallery-item">
+            <img src="https://static.toiimg.com/photo/102165926.cms" alt="Image 2">
+        </div>
+        <div class="gallery-item">
+            <img src="https://telugustop.com/wp-content/uploads/2020/09/yuvaraj-singh-is-going-to-play-big-bosh-league.jpg" alt="Image 3">
+        </div><div class="gallery-item">
+            <img src="https://img.jagranjosh.com/imported/images/E/GK/sachin-records.png" alt="Image 4" width="200" height="200">
+        </div><div class="gallery-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxUO-GwokndX5xQg96jlTJl1x7grDsrCTjjQ&usqp=CAU" alt="Image 5">
+        </div>
+    </div>
+
+</body>
+</html>

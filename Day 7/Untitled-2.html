@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aptitude Quiz Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    button {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: #fff;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1> Railway Aptitude Quiz Game</h1>
+    <div class="question" id="question"></div>
+    <div class="options" id="options"></div>
+    <button onclick="checkAnswer()">Next Question</button>
+  </div>
+
+  <script>
+    const quizData = [
+      {
+        question: "If A = 2, B = 4, C = 6, what is A + B + C?",
+        options: ["10", "12", "14", "16"],
+        answer: "12"
+      },
+      {
+        question: "If 2x - 5 = 13, then x = ?",
+        options: ["7", "9", "10", "11"],
+        answer: "9"
+      },
+      {
+        question: "What is 15% of 200?",
+        options: ["20", "25", "30", "35"],
+        answer: "30"
+      }
+    ];
+
+    let currentQuestion = 0;
+    const questionElement = document.getElementById("question");
+    const optionsElement = document.getElementById("options");
+
+    function loadQuestion() {
+      questionElement.textContent = quizData[currentQuestion].question;
+      optionsElement.innerHTML = "";
+      quizData[currentQuestion].options.forEach(option => {
+        const button = document.createElement("button");
+        button.textContent = option;
+        button.setAttribute("onclick", "selectOption(this)");
+        optionsElement.appendChild(button);
+      });
+    }
+
+    function selectOption(button) {
+      const selectedAnswer = button.textContent;
+      if (selectedAnswer === quizData[currentQuestion].answer) {
+        alert("Correct!");
+      } else {
+        alert("Incorrect!");
+      }
+    }
+
+    function checkAnswer() {
+      currentQuestion++;
+      if (currentQuestion < quizData.length) {
+        loadQuestion();
+      } else {
+        alert("End of Quiz!");
+      }
+    }
+
+    // Load first question when the page loads
+    loadQuestion();
+  </script>
+</body>
+</html>

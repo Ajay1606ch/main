@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Ticket Booking</title>
+  
+</head>
+<style>
+  .container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input, select, button {
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #3700ff;
+  color: rgb(250, 248, 248);
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #f50606;
+}
+
+#bookingResult {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+</style>
+<body>
+  <div class="container">
+    <h1>Movie Ticket Booking</h1>
+    <form id="bookingForm">
+      <label for="movie">Select Movie:</label>
+      <select id="movie" name="movie">
+        <option value="Salaar">Salaar</option>
+        <option value="Saindhav">Saindhav</option>
+        <option value="Hi Naana">Hi Naana</option>
+      </select>
+
+      <label for="tickets">Number of Tickets:</label>
+      <input type="number" id="tickets" name="tickets" min="1" value="1">
+
+      <button type="submit">Book Tickets</button>
+    </form>
+    <div id="bookingResult"></div>
+  </div>
+
+  <script>
+    document.getElementById("bookingForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+  
+  const movie = document.getElementById("movie").value;
+  const tickets = parseInt(document.getElementById("tickets").value);
+  const totalPrice = calculatePrice(movie, tickets);
+  
+  document.getElementById("bookingResult").innerHTML = `You have booked ${tickets} ticket(s) for "${movie}" movie. Total Price: $${totalPrice}`;
+});
+
+function calculatePrice(movie, tickets) {
+  if (movie === "Salaar") {
+    price = 250;
+  } else if (movie === "Saindhav") {
+    price = 150;
+  }
+  return price * tickets;
+}
+
+  </script>
+</body>
+</html>

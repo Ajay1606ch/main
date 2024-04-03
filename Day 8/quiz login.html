@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Page</title>
+<style>
+    body {
+  background-image: url("https://t4.ftcdn.net/jpg/03/12/39/23/240_F_312392310_T6Qe2xapA2UdeCSCq39rJcoSdgX1AaoU.jpg");
+}
+body{
+    font-family: Arial, sans-serif;
+      margin: 10px;
+      padding: 10px;
+      background-color: #fcfbfb;
+}
+h1{
+    text-align: center;
+    background-color: #9ef8ec;
+}
+p{
+    text-align: end;
+    background-color:   ;
+}
+h2{
+    text-align: right;
+}
+
+div.relative {
+  position: relative;
+  left: 830px;
+  border: px solid #73AD21;
+}
+div.relative{
+    position: relative;
+    position:80px;
+    padding: 10px;
+    margin: 20px;
+}
+</style>
+<script>
+function generateCaptcha() {
+    var captcha = '';
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var captchaLength = 7; 
+    
+    for (var i = 0; i < captchaLength; i++) {
+        captcha += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    
+    document.getElementById('captcha').innerText = captcha;
+}
+
+function validateForm() {
+    var userInput = document.getElementById('captchaInput').value;
+    var generatedCaptcha = document.getElementById('captcha').innerText;
+    
+    if (userInput === generatedCaptcha) {
+        alert('CAPTCHA is correct. Form submitted!');
+    } else {
+        alert('CAPTCHA is incorrect. Please try again.');
+    }
+}
+</script>
+</head>
+<body>
+
+<h1>LOGIN THE QUIZ</h1><br><br>
+<h2>Aptitude Quiz Game (begineer level to hard level)</h2>
+<p>
+    An Exam used to determine an individual's skill or propensity to succeed in a given activity.
+</p>
+<div class="relative">
+    <img src="https://play-lh.googleusercontent.com/8HEJdrLd48HwrAzlRva8xjG1wxCuu0VUd9ML6ySw76q-lBD0AeWofbNZqYPrjWSCgf8" width="200" height="200"></div>
+<form action="./homepage.html">
+<div class="relative">
+<form onsubmit="event.preventDefault(); validateForm();">
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" name="username"><br>
+    
+    <!-- <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email"><br><br>
+     -->
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password"><br>
+    
+    <label>CAPTCHA:</label><br>
+    <div id="captcha"></div>
+    <button type="button" onclick="generateCaptcha()">Generate CAPTCHA</button><br>
+    <input type="text" id="captchaInput" placeholder="Enter CAPTCHA"><br>
+    
+    <input type="submit" value="submit">
+    
+</form>
+</div>
+</form>
+
+</body>
+</html>

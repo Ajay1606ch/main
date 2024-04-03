@@ -1,0 +1,225 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var numbers = (1,2,3,4,5,6,7,8);
+        var even = ();
+        for(let i = 0; i < numbers.length; i++) {
+       if (numbers[i] % 2 == 0)
+       even.push(numbers[i]);
+}
+console.log(printevennumbers);
+    </script>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+          //print only capital letters string charcode At
+            var a ="AchBcD";
+            b="";
+            for(i=0;i<a.length;i++){
+                if(a.charCodeAt(i)>=65 && a.charCodeAt(i)<=90){
+                  b=b+a.charAt(i);
+                }
+            }
+            console.log(b);
+
+            var a ="AbcDp";
+            b="";
+            for(i=0;i<a.length;i++){
+                if(a.charCodeAt(i)>65 && a.charCodeAt(i)>90){
+                    b=b+a.charAt(i);
+                }
+            }
+            console.log(b);
+
+            
+           
+          //print only small letters
+            r="";
+            for(i=0;i<a.length;i++){
+                if(a.charCodeAt(i)>=97 && a.charCodeAt(i)<=122){
+                  r=r+a.charAt(i);
+                }
+            }
+            console.log(r);
+          //print capital letters and small letter beside
+            console.log(b+r);
+          //remove spaces and print the string
+            var c="  hello guys   ";
+            d="";
+            for(i=0;i<c.length;i++){
+                if(c[i]!=" "){
+                  d=d+c[i];
+                }
+            }
+            console.log(d);
+          //print how many characters are there 
+            e=0;
+            l=0;
+            for(i=0;i<c.length;i++){
+                if(c.charAt(i)!=" "){
+                  e++;
+                }
+            }
+            console.log("number of char :" + e);
+          //print how many spaces are there
+            for(i=0;i<c.length;i++){
+                if(c.charAt(i)==" "){
+                  l++;
+                }
+            }
+          //print reverse of the string
+            console.log("number of spaces :" + l);
+             var m="hello to you";
+             var n="";
+            for(i=m.length-1;i>=0;i--){
+              n=n+m[i];
+            }
+            console.log("Reversed String :" + n);
+          //write a function of the slice
+            function sliceA(u,w,q){
+              o="";
+              for(i=w;i<q;i++){
+                o=o+u[i];
+              }
+              console.log(o);
+            }
+            sliceA("hello",0,3)
+    
+          //use split and concatinate the result
+            p="chai_tan_ya";
+            console.log(p.replaceAll("_",""));
+            
+            v=p.split("_");
+            console.log(v);
+            h="";
+            for(i=0;i<v.length;i++){
+             h=h+v[i];
+            }
+            console.log(h);
+
+            
+
+            
+      //print only capital letters
+        var a ="AchBcD";
+        b="";
+        for(i=0;i<a.length;i++){
+            if(a.charCodeAt(i)>=65 && a.charCodeAt(i)<=90){
+              b=b+a.charAt(i);
+            }
+        }
+        console.log(b);
+      //print only small letters
+        r="";
+        for(i=0;i<a.length;i++){
+            if(a.charCodeAt(i)>=97 && a.charCodeAt(i)<=122){
+              r=r+a.charAt(i);
+            }
+        }
+        console.log(r);
+      //print capital letters and small letter beside
+        console.log(b+r);
+      //remove spaces and print the string
+        var c="  hello guys   ";
+        d="";
+        for(i=0;i<c.length;i++){
+            if(c[i]!=" "){
+              d=d+c[i];
+            }
+        }
+        console.log(d);
+      //print how many characters are there 
+        e=0;
+        l=0;
+        for(i=0;i<c.length;i++){
+            if(c.charAt(i)!=" "){
+              e++;
+            }
+        }
+        console.log("number of char :" + e);
+      //print how many spaces are there
+        for(i=0;i<c.length;i++){
+            if(c.charAt(i)==" "){
+              l++;
+            }
+        }
+      //print reverse of the string
+        console.log("number of spaces :" + l);
+         var m="hello to you";
+         var n="";
+        for(i=m.length-1;i>=0;i--){
+          n=n+m[i];
+        }
+        console.log("Reversed String :" + n);
+      //write a function of the slice
+        function sliceA(u,w,q){
+          o="";
+          for(i=w;i<q;i++){
+            o=o+u[i];
+          }
+          console.log(o);
+        }
+        sliceA("hello",0,3)
+
+      //use split and concatinate the result
+        p="chai_tan_ya";
+        console.log(p.replaceAll("_"," "));
+        
+        v=p.split("_");
+        console.log(v);
+        h="";
+        for(i=0;i<v.length;i++){
+         h=h+v[i];
+        }
+        console.log(h);
+
+    // factorial series
+    j=10;
+    l=1;
+    for(i=j;i>1;i--){
+        l=l*i;
+    }
+    console.log(l);
+
+    q=11;
+    a=0;
+    b=1;
+    c=null;
+    for(i=1;i<=q;i++){
+       console.log(a);
+     c=a+b;
+     a=b;
+     b=c;   
+    }
+    var a ="AbcDrT";
+            b="";
+            for(i=0;i<a.length;i++){
+                if(a.charCodeAt(i)>=65 && a.charCodeAt(i)<=90){
+                  b=b+a.charAt(i);
+                }
+            }
+            console.log(b. toLowerCase());
+
+            //reduce 
+            var a =[1,2,3,4,5]
+            var redd=a.reduce(cb,0)
+            function cb(total,value,index,array){
+              return total+val
+            }
+            console.log(redd);
+        </script>
+    </body>
+    </html>
+</body>
+</html>

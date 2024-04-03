@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aptitude Quiz Game</title>
+  <style>
+    
+    body {
+  background-image: url("https://media.geeksforgeeks.org/wp-content/uploads/20230304223357/Logical-Reasoning-Topics-Questions-and-Answers.png");
+}
+
+    
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f8f8;
+    }
+    .container {
+      max-width: 930px;
+      max-height: 930px;
+      margin: 190px auto;
+      padding: 25px;
+      background-color: #cfcdcd;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    button {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: #fff;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1> Reasoning Quiz Game</h1>
+    <div class="question" id="question"></div>
+    <div class="options" id="options"></div><br>
+    <button onclick="checkAnswer()">Next Question</button>
+  </div>
+
+  <script>
+    const quizData = [
+      {
+        question: "Look at this series: 12, 11, 13, 12, 14, 13, … What number should come next?A",
+        options: ["A) 10", "B) 16", "C) 13", "D) 15"],
+        answer: "D) 15"
+      },
+      {
+        question: "Which word is the odd man out?",
+        options: ["A) Un important", "B) Important", "C) Trivial", "D) insignificant"],
+        answer: "B) Important"
+      },
+      {
+        question: "Complete the series 1,6,13,22,33,..",
+        options: ["A) 46", "B) 48", "C) 49", "D) 51"],
+        answer: "A) 46"
+      },
+      
+      {
+        question:"  Joey : Kangaroo:: Calf:?",
+        options: ["A) Dog","B) Cattle","C) Cat","D)  Rhinoceros"],
+        answer:"A) Cattle"
+
+      },
+      {
+        question:" If A is the brother of B, C is the sister of B, and C is the father of D, how is D related to A?",
+        options:["A) Nephew","B) Niece","C) Grandson","D) Granddaughter"],
+        answer:"A) Nephew"
+      },
+      {
+        question:"In a row of 20 students facing North, R is 9th from the left end. How many students are there between R and S? ",
+        options:["A) 7","B) 8","C) 9","D) 10"],
+        answer:"B) 8"
+      },
+      
+      {
+        question:"How many minimum cuts you have made?",
+        options:["A) 15","B) 18","C) 21","D) 9"],
+        answer:"B) 18"
+      },
+    ];
+
+    let currentQuestion = 0;
+    const questionElement = document.getElementById("question");
+    const optionsElement = document.getElementById("options");
+
+    function loadQuestion() {
+      questionElement.textContent = quizData[currentQuestion].question;
+      optionsElement.innerHTML = "";
+      quizData[currentQuestion].options.forEach(option => {
+        const button = document.createElement("button");
+        button.textContent = option;
+        button.setAttribute("onclick", "selectOption(this)");
+        optionsElement.appendChild(button);
+      });
+    }
+
+    function selectOption(button) {
+      const selectedAnswer = button.textContent;
+      if (selectedAnswer === quizData[currentQuestion].answer) {
+        alert("Correct!");
+      } else {
+        alert("Incorrect!");
+      }
+    }
+
+    function checkAnswer() {
+      currentQuestion++;
+      if (currentQuestion < quizData.length) {
+        loadQuestion();
+      } else {
+        alert("End of Reasoning Quiz");
+        window.location = "./thankyou.html";
+
+      }
+    }
+
+    loadQuestion();
+  </script>
+  
+</body>
+</html>
